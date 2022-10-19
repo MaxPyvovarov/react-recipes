@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-// import {motion} from 'framer-motion';
 import {useParams} from 'react-router-dom';
 import {CuisineCard, Grid} from '../components/Styled/Styled';
 import {Link} from 'react-router-dom';
@@ -22,7 +21,11 @@ export default function Cuisine() {
 	};
 
 	return (
-		<Grid>
+		<Grid
+			initial={{opacity: 0}}
+			animate={{opacity: 1}}
+			transition={{duration: 0.5}}
+		>
 			{cuisine.map(item => (
 				<Link key={item.id} to={`/recipes/${item.id}`}>
 					<CuisineCard>
