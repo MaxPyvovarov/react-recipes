@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Wrapper, Card, Gradient} from './Styled/Styled';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import {Link} from 'react-router-dom';
 
 export default function Popular() {
 	const [popular, setPopular] = useState([]);
@@ -26,29 +27,29 @@ export default function Popular() {
 	};
 
 	return (
-		<div>
-			<Wrapper>
-				<h3>Popular picks</h3>
-				<Splide
-					options={{
-						perPage: 3,
-						arrows: false,
-						pagination: false,
-						drag: 'free',
-						gap: '2rem',
-					}}
-				>
-					{popular.map(recipe => (
-						<SplideSlide key={recipe.id}>
+		<Wrapper>
+			<h3>Popular picks</h3>
+			<Splide
+				options={{
+					perPage: 3,
+					arrows: false,
+					pagination: false,
+					drag: 'free',
+					gap: '2rem',
+				}}
+			>
+				{popular.map(recipe => (
+					<SplideSlide key={recipe.id}>
+						<Link to={`/recipes/${recipe.id}`}>
 							<Card>
 								<p>{recipe.title}</p>
 								<img src={recipe.image} alt={recipe.title} />
 								<Gradient />
 							</Card>
-						</SplideSlide>
-					))}
-				</Splide>
-			</Wrapper>
-		</div>
+						</Link>
+					</SplideSlide>
+				))}
+			</Splide>
+		</Wrapper>
 	);
 }

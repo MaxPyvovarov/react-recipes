@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {Grid, CuisineCard} from '../components/Styled/Styled';
 
 export default function Searched() {
@@ -22,10 +22,12 @@ export default function Searched() {
 	return (
 		<Grid>
 			{searchedRecipes.map(recipe => (
-				<CuisineCard key={recipe.id}>
-					<img src={recipe.image} alt={recipe.title} />
-					<h4>{recipe.title}</h4>
-				</CuisineCard>
+				<Link key={recipe.id}>
+					<CuisineCard>
+						<img src={recipe.image} alt={recipe.title} />
+						<h4>{recipe.title}</h4>
+					</CuisineCard>
+				</Link>
 			))}
 		</Grid>
 	);

@@ -121,7 +121,7 @@ const SLink = styled(NavLink)`
 const FormStyle = styled.form`
 	margin: 0 auto;
 	position: relative;
-	width: 100%;
+	width: 75%;
 
 	input {
 		border: none;
@@ -144,4 +144,58 @@ const FormStyle = styled.form`
 	}
 `;
 
-export {Wrapper, Card, Gradient, List, Grid, CuisineCard, SLink, FormStyle};
+const DetailWrapper = styled.div`
+	margin-top: 10rem;
+	margin-bottom: 5rem;
+	display: flex;
+
+	.active {
+		background: linear-gradient(35deg, #494949, #313131);
+		color: #fff;
+	}
+
+	h2 {
+		margin-bottom: 2rem;
+	}
+
+	ul {
+		margin-top: 2rem;
+	}
+
+	li {
+		font-size: 1.2rem;
+		line-height: 1.5rem;
+	}
+`;
+
+const Button = styled.button`
+	padding: 1rem 2rem;
+	color: #313131;
+	background: #fff;
+	border: 2px solid #000;
+	margin-right: 2rem;
+	font-weight: 600;
+	cursor: pointer;
+`;
+
+const Info = styled.div`
+	margin-left: 5rem;
+
+	p {
+		margin-top: 1rem;
+	}
+`;
+
+export {
+	Wrapper,
+	Card,
+	Gradient,
+	List,
+	Grid,
+	CuisineCard,
+	SLink,
+	FormStyle,
+	DetailWrapper,
+	Info,
+	Button,
+};
