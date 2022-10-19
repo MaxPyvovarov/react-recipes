@@ -1,8 +1,27 @@
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
 const Wrapper = styled.div`
 	margin: 4rem 0rem;
+`;
+
+const Brand = styled.div`
+	font-size: 2rem;
+	font-weight: 400;
+	font-family: 'Lobster Two', cursive;
+`;
+
+const HomeLink = styled(Link)`
+	padding: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+
+	svg {
+		font-size: 3rem;
+	}
 `;
 
 const Card = styled.div`
@@ -85,7 +104,6 @@ const SLink = styled(NavLink)`
 	background: linear-gradient(35deg, #494949, #313131);
 	width: 6rem;
 	height: 6rem;
-	cursor: pointer;
 	scale: 0.8;
 	transition: all 0.3s ease-in-out;
 
@@ -188,6 +206,8 @@ const Info = styled.div`
 
 export {
 	Wrapper,
+	Brand,
+	HomeLink,
 	Card,
 	Gradient,
 	List,
