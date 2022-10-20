@@ -9,7 +9,7 @@ export default function Search() {
 
 	const submitHandler = e => {
 		e.preventDefault();
-		navigate(`/searched/${input}`);
+		navigate(`/react-recipes/searched/${input}`);
 	};
 
 	return (
