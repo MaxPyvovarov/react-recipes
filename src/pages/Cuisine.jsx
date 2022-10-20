@@ -27,7 +27,7 @@ export default function Cuisine() {
 			transition={{duration: 0.5}}
 		>
 			{cuisine.map(item => (
-				<Link key={item.id} to={`/recipes/${item.id}`}>
+				<Link key={item.id} to={`/react-recipes/recipes/${item.id}`}>
 					<CuisineCard>
 						<img src={item.image} alt={item.title} />
 						<h4>{item.title}</h4>

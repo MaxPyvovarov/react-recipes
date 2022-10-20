@@ -23,7 +23,7 @@ export default function Searched() {
 		<Grid>
 			{searchedRecipes.length ? (
 				searchedRecipes.map(recipe => (
-					<Link key={recipe.id} to={`/recipes/${recipe.id}`}>
+					<Link key={recipe.id} to={`/react-recipes/recipes/${recipe.id}`}>
 						<CuisineCard>
 							<img src={recipe.image} alt={recipe.title} />
 							<h4>{recipe.title}</h4>

@@ -11,10 +11,10 @@ export default function Pages() {
 	return (
 		<AnimatePresence exitBeforeEnter>
 			<Routes location={location} key={location.pathname}>
-				<Route path='/' exact element={<Home />} />
-				<Route path='/cuisine/:type' element={<Cuisine />} />
-				<Route path='/searched/:search' element={<Searched />} />
-				<Route path='/recipes/:id' element={<Recipe />} />
+				<Route path='/react-recipes/' exact element={<Home />} />
+				<Route path='/react-recipes/cuisine/:type' element={<Cuisine />} />
+				<Route path='/react-recipes/searched/:search' element={<Searched />} />
+				<Route path='/react-recipes/recipes/:id' element={<Recipe />} />
 			</Routes>
 		</AnimatePresence>
 	);

@@ -35,7 +35,7 @@ export default function Popular() {
 			>
 				{popular.map(recipe => (
 					<SplideSlide key={recipe.id}>
-						<Link to={`/recipes/${recipe.id}`}>
+						<Link to={`/react-recipes/recipes/${recipe.id}`}>
 							<Card>
 								<p>{recipe.title}</p>
 								<img src={recipe.image} alt={recipe.title} />
