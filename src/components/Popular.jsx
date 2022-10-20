@@ -13,17 +13,12 @@ export default function Popular() {
 	}, []);
 
 	const getPopular = async () => {
-		if (localStorage.getItem('popular')) {
-			setPopular(JSON.parse(localStorage.getItem('popular')));
-		} else {
-			const api = await fetch(
-				`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
-			);
+		const api = await fetch(
+			`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
+		);
 
-			const data = await api.json();
-			localStorage.setItem('popular', JSON.stringify(data.recipes));
-			setPopular(data.recipes);
-		}
+		const data = await api.json();
+		setPopular(data.recipes);
 	};
 
 	return (
@@ -32,7 +27,7 @@ export default function Popular() {
 			<Splide
 				options={{
 					perPage: 3,
-					arrows: false,
+					arrows: true,
 					pagination: false,
 					drag: 'free',
 					gap: '2rem',

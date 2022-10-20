@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {Grid, CuisineCard} from '../components/Styled/Styled';
+import {Grid, CuisineCard, Warning} from '../components/Styled/Styled';
 
 export default function Searched() {
 	const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -21,14 +21,18 @@ export default function Searched() {
 
 	return (
 		<Grid>
-			{searchedRecipes.map(recipe => (
-				<Link key={recipe.id}>
-					<CuisineCard>
-						<img src={recipe.image} alt={recipe.title} />
-						<h4>{recipe.title}</h4>
-					</CuisineCard>
-				</Link>
-			))}
+			{searchedRecipes.length ? (
+				searchedRecipes.map(recipe => (
+					<Link key={recipe.id} to={`/recipes/${recipe.id}`}>
+						<CuisineCard>
+							<img src={recipe.image} alt={recipe.title} />
+							<h4>{recipe.title}</h4>
+						</CuisineCard>
+					</Link>
+				))
+			) : (
+				<Warning>No matched results</Warning>
+			)}
 		</Grid>
 	);
 }

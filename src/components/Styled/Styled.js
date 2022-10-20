@@ -185,6 +185,12 @@ const DetailWrapper = styled.div`
 		font-size: 1.2rem;
 		line-height: 1.5rem;
 	}
+
+	p {
+		li {
+			list-style: none;
+		}
+	}
 `;
 
 const Button = styled.button`
@@ -205,6 +211,11 @@ const Info = styled.div`
 	}
 `;
 
+const Warning = styled.h2`
+	text-align: center;
+	margin: 3rem;
+`;
+
 export {
 	Wrapper,
 	Brand,
@@ -219,4 +230,5 @@ export {
 	DetailWrapper,
 	Info,
 	Button,
+	Warning,
 };
